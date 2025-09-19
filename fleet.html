@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Fleet - DriveEasy Kenya</title>
+    <meta name="description" content="Browse our premium fleet of vehicles - SUVs, sedans, and luxury cars perfect for all Kenyan roads" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+     <!-- Favicon -->
+    <link rel="icon" href="/images/drive-easy.webp" />
+
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">DriveEasy</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="fleet.html" class="nav-link active">Fleet</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <span>☰</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="logo">DriveEasy</a>
+        <button class="close-menu" id="close-menu">✕</button>
+      </div>
+      <ul class="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fleet.html">Fleet</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Fleet Header -->
+    <section class="fleet-header">
+      <div class="container">
+        <h2>Our Premium Fleet</h2>
+        <p>Choose from our extensive collection of vehicles perfect for all roads</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="container">
+        <button class="filter-btn active" data-filter="all">All Cars</button>
+        <button class="filter-btn" data-filter="suv">SUV/4x4</button>
+        <button class="filter-btn" data-filter="sedan">Sedan</button>
+        <button class="filter-btn" data-filter="luxury">Luxury</button>
+      </div>
+    </section>
+
+    <!-- Cars Grid -->
+    <section class="section">
+      <div class="container">
+        <div id="cars-grid" class="grid grid-3">
+          <!-- SUV/4x4 Cars -->
+          <div class="car-card scroll-animate" data-category="suv">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Toyota Land Cruiser V8" />
+            <div class="car-card-content">
+              <h3>Toyota Land Cruiser V8</h3>
+              <p class="car-type">Premium SUV</p>
+              <div class="car-price">
+                <span class="price">KSh 18,000/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-card scroll-animate" data-category="suv">
+            <img src="https://images.unsplash.com/photo-1650530579355-7ad9d4766043?q=80&w=870&auto=format&fit=crop" alt="Toyota Prado TX" />
+            <div class="car-card-content">
+              <h3>Toyota Prado TX</h3>
+              <p class="car-type">Luxury SUV</p>
+              <div class="car-price">
+                <span class="price">KSh 12,000/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-card scroll-animate" data-category="suv">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Subaru Forester" />
+            <div class="car-card-content">
+              <h3>Subaru Forester</h3>
+              <p class="car-type">Compact SUV</p>
+              <div class="car-price">
+                <span class="price">KSh 8,500/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sedans -->
+          <div class="car-card scroll-animate" data-category="sedan">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Toyota Axio" />
+            <div class="car-card-content">
+              <h3>Toyota Axio</h3>
+              <p class="car-type">Economy Sedan</p>
+              <div class="car-price">
+                <span class="price">KSh 4,500/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-card scroll-animate" data-category="sedan">
+            <img src="https://images.unsplash.com/photo-1556189250-72ba954cfc2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Honda Civic" />
+            <div class="car-card-content">
+              <h3>Honda Civic</h3>
+              <p class="car-type">Executive Sedan</p>
+              <div class="car-price">
+                <span class="price">KSh 6,500/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Luxury Cars -->
+          <div class="car-card scroll-animate" data-category="luxury">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Mercedes Benz E-Class" />
+            <div class="car-card-content">
+              <h3>Mercedes E-Class</h3>
+              <p class="car-type">Luxury Sedan</p>
+              <div class="car-price">
+                <span class="price">KSh 15,000/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-card scroll-animate" data-category="luxury">
+            <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Range Rover Sport" />
+            <div class="car-card-content">
+              <h3>Range Rover Sport</h3>
+              <p class="car-type">Luxury SUV</p>
+              <div class="car-price">
+                <span class="price">KSh 25,000/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="car-card scroll-animate" data-category="luxury">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="BMW X5" />
+            <div class="car-card-content">
+              <h3>BMW X5</h3>
+              <p class="car-type">Luxury SUV</p>
+              <div class="car-price">
+                <span class="price">KSh 20,000/day</span>
+                <a href="contact.html" class="btn btn-primary">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>DriveEasy</h3>
+            <p>Your trusted partner for premium car rental services across Kenya.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="fleet.html">Fleet</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a>SUV & 4x4 Rentals</a></li>
+              <li><a>Sedan Rentals</a></li>
+              <li><a>Luxury Vehicles</a></li>
+              <li><a>Airport Transfers</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>+254 700 123 456</p>
+            <p>info@driveeasy.co.ke</p>
+            <p>Moi Avenue, Nairobi CBD, Kenya</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 DriveEasy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

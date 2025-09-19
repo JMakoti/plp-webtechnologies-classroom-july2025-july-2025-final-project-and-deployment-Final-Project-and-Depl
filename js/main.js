@@ -1,6 +1,6 @@
-// File: js/index.js
 // JavaScript for DriveEasy Kenya website functionality
-//Home page Image Transition
+
+// Home page Image Transition
 const images = [
   "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80",
   "https://images.unsplash.com/photo-1613859492095-85d9944f09f6?q=80&w=1287&auto=format&fit=crop&w=600&h=400&q=80",
@@ -10,93 +10,49 @@ const images = [
 let currentIndex = 0;
 const carImage = document.getElementById("carImage");
 
-setInterval(() => {
-  carImage.style.opacity = 0;
+if (carImage) {
+  setInterval(() => {
+    carImage.style.opacity = 0;
 
-  setTimeout(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    carImage.src = images[currentIndex];
-    carImage.style.opacity = 1;
-  }, 1000); // match CSS transition duration
-}, 30000); // 30 seconds
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      carImage.src = images[currentIndex];
+      carImage.style.opacity = 1;
+    }, 1000);
+  }, 30000);
+}
 
-
-//Display the mobile menu when Clicked
-document.addEventListener("DOMContentLoaded", () =>{
-
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile menu functionality
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeMenu = document.getElementById("close-menu");
 
-  mobileMenuBtn.addEventListener("click", function () {
-    mobileMenu.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
+  if (mobileMenuBtn && mobileMenu && closeMenu) {
+    mobileMenuBtn.addEventListener("click", function () {
+      mobileMenu.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
 
-  closeMenu.addEventListener("click", function () {
-    mobileMenu.classList.remove("active");
-    document.body.style.overflow = "auto";
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener("click", function (e) {
-    if (
-      mobileMenu.classList.contains("active") &&
-      !mobileMenu.contains(e.target) &&
-      e.target !== mobileMenuBtn
-    ) {
+    closeMenu.addEventListener("click", function () {
       mobileMenu.classList.remove("active");
       document.body.style.overflow = "auto";
-    }
-  });
-
-  // Single-page navigation
-  function showSection(sectionId) {
-    // Hide all sections
-    const sections = document.querySelectorAll(".page-section");
-    sections.forEach((section) => {
-      section.classList.remove("active");
     });
 
-    // Show target section
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-      targetSection.classList.add("active");
-    }
-
-    // Update navigation active states
-    const navLinks = document.querySelectorAll(
-      ".nav-link, .mobile-nav a, .footer-links a"
-    );
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (
+        mobileMenu.classList.contains("active") &&
+        !mobileMenu.contains(e.target) &&
+        e.target !== mobileMenuBtn
+      ) {
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
     });
-
-    const activeLinks = document.querySelectorAll(
-      `[data-section="${sectionId}"]`
-    );
-    activeLinks.forEach((link) => {
-      link.classList.add("active");
-    });
-
-    // Close mobile menu
-    mobileMenu.classList.remove("active");
-    document.body.style.overflow = "auto";
-
-    // Scroll to top
-    window.scrollTo(0, 0);
   }
 
-  // Navigation event listeners
-  document.addEventListener("click", function (e) {
-    if (e.target.hasAttribute("data-section")) {
-      e.preventDefault();
-      const sectionId = e.target.getAttribute("data-section");
-      showSection(sectionId);
-    }
-  });
-
-  // Car filtering functionality
+  // Car filtering functionality (for fleet page)
   const filterBtns = document.querySelectorAll(".filter-btn");
   const carCards = document.querySelectorAll(".car-card[data-category]");
 
@@ -136,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () =>{
   window.addEventListener("scroll", animateOnScroll);
   animateOnScroll(); // Run on load
 
-  // Form validation and submission
+  // Form validation and submission (for contact page)
   const bookingForm = document.getElementById("booking-form");
   if (bookingForm) {
     bookingForm.addEventListener("submit", function (e) {
@@ -159,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () =>{
       const pickupDate = document.getElementById("pickupDate");
       const dropoffDate = document.getElementById("dropoffDate");
 
-      if (pickupDate.value && dropoffDate.value) {
+      if (pickupDate && dropoffDate && pickupDate.value && dropoffDate.value) {
         const pickup = new Date(pickupDate.value);
         const dropoff = new Date(dropoffDate.value);
         const today = new Date();
